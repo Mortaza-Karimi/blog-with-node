@@ -1,4 +1,5 @@
 const showArticles = require("./app/articles/showArticles");
+const showArticle = require("./app/articles/showArticle");
 const showByCategories = require("./app/categories/showByCategories");
 const showCategories = require("./app/categories/showCategories");
 const showByTag = require("./app/tags/showByTag");
@@ -15,6 +16,7 @@ app.get("/api/server-running", function (req, res) {
 });
 
 app.get("/api/articles", showArticles);
+app.get("/api/article/:article", showArticle);
 app.get("/api/categories/:category", showByCategories);
 app.get("/api/categories", showCategories);
 app.get("/api/tags", showTags);
