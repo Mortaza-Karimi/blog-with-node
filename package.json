@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mortaza-Karimi/blog-with-node.git"
+  },
+  "keywords": [
+    "blog",
+    "node-blog"
+  ],
+  "author": "morteza karimi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mortaza-Karimi/blog-with-node/issues"
+  },
+  "homepage": "https://github.com/Mortaza-Karimi/blog-with-node#readme"
+}
