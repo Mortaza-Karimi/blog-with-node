@@ -1,0 +1,10 @@
+{
+  "name": "test article",
+  "category": "test is a good",
+  "tags": ["test", "article", "this"],
+  "date": {
+    "year": "2021",
+    "month": "3",
+    "day": "12"
+  }
+}
