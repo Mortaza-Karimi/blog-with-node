@@ -1,8 +1,8 @@
 const fs = require("fs");
 const showArticle = (req, res) => {
+  const article = { article: null };
   const dirFileList = fs.readdirSync("./articles");
   dirFileList.map(function (value, index) {
-    const article = { article: null };
     const thisArticle = fs.readFileSync(
       `./articles/${dirFileList[index]}/data.json`,
       "utf-8"
