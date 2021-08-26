@@ -1,5 +1,10 @@
 const fs = require("fs");
+const searchArticle = require("./searchArticle");
 const showArticles = (req, res) => {
+  if (req.params.q !== null) {
+    console.log("search");
+    return searchArticle(req, res);
+  }
   const articles = { articles: [] };
 
   const dirFileList = fs.readdirSync("articles");
