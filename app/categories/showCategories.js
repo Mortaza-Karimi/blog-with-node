@@ -1,5 +1,5 @@
 const fs = require("fs");
-function showCategories(req, res) {
+const showCategories = (req, res) => {
   const categories = { categories: [] };
 
   const dirFileList = fs.readdirSync("articles");
@@ -10,5 +10,5 @@ function showCategories(req, res) {
   });
 
   res.json(categories);
-}
+};
 module.exports = showCategories;

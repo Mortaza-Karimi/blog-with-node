@@ -1,5 +1,5 @@
 const fs = require("fs");
-function showByTag(req, res) {
+const showByTag = (req, res) => {
   const tags = { tags: [] };
 
   const dirFileList = fs.readdirSync("articles");
@@ -12,5 +12,5 @@ function showByTag(req, res) {
   });
 
   res.json(tags);
-}
+};
 module.exports = showByTag;

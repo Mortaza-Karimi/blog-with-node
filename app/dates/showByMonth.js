@@ -1,5 +1,5 @@
 const fs = require("fs");
-function showByMonth(req, res) {
+const showByMonth = (req, res) => {
   const months = { months: [] };
 
   const dirFileList = fs.readdirSync("articles");
@@ -15,5 +15,5 @@ function showByMonth(req, res) {
   });
 
   res.json(months);
-}
+};
 module.exports = showByMonth;

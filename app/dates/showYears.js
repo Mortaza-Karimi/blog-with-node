@@ -1,5 +1,5 @@
 const fs = require("fs");
-function showYears(req, res) {
+const showYears = (req, res) => {
   const years = { years: [] };
 
   const dirFileList = fs.readdirSync("articles");
@@ -10,5 +10,5 @@ function showYears(req, res) {
   });
 
   res.json(years);
-}
+};
 module.exports = showYears;
