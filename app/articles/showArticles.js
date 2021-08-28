@@ -1,9 +1,11 @@
 const fs = require("fs");
 const searchArticle = require("./searchArticle");
 const showArticles = (req, res) => {
-  if (req.params.q !== null) {
+  console.log(req.query.q);
+  if (req.query.q) {
     console.log("search");
-    return searchArticle(req, res);
+    searchArticle(req, res);
+    return;
   }
   const articles = { articles: [] };
 
@@ -14,7 +16,7 @@ const showArticles = (req, res) => {
     articles.articles.push(JSON.parse(thisArticle));
   });
 
-  //   articles.articles = dirFileList;
+  // articles.articles = dirFileList;
 
   res.json(articles);
 };
