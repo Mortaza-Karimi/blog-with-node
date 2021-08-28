@@ -8,6 +8,7 @@ const showByYear = require("./app/dates/showByYear");
 const showYears = require("./app/dates/showYears");
 const showByMonth = require("./app/dates/showByMonth");
 const showMonths = require("./app/dates/showMonths");
+const addCategory = require("./app/categories/addCategory");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -32,6 +33,7 @@ app.get("/api/years/:year", showByYear);
 app.get("/api/years", showYears);
 app.get("/api/years/:year/:month", showByMonth);
 app.get("/api/months", showMonths);
+app.post("/api/admin/addCategory", addCategory);
 
 app.listen(2000);
 
