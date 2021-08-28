@@ -9,7 +9,9 @@ const showYears = require("./app/dates/showYears");
 const showByMonth = require("./app/dates/showByMonth");
 const showMonths = require("./app/dates/showMonths");
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+app.use(bodyParser.json({ extended: true }));
 app.use(function (req, res, next) {
   console.log(`${req.method} request for route : ${req.url}`);
 
