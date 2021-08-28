@@ -10,6 +10,11 @@ const showByMonth = require("./app/dates/showByMonth");
 const showMonths = require("./app/dates/showMonths");
 const express = require("express");
 const app = express();
+app.use(function (req, res, next) {
+  console.log(`${req.method} request for route : ${req.url}`);
+
+  next();
+});
 
 app.get("/api/server-running", function (req, res) {
   res.json({ status: "ok" });
