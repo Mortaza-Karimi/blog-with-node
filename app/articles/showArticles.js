@@ -1,9 +1,7 @@
 const fs = require("fs");
 const searchArticle = require("./searchArticle");
 const showArticles = (req, res) => {
-  console.log(req.query.q);
   if (req.query.q) {
-    console.log("search");
     searchArticle(req, res);
     return;
   }

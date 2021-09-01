@@ -9,7 +9,6 @@ const addCategory = (req, res) => {
     fs.readFileSync(`./app/categories/categories.json`, "utf-8")
   );
   categories.categories.push(req.body.category);
-  console.log(categories.categories);
   fs.writeFileSync(
     `./app/categories/categories.json`,
     JSON.stringify(categories)

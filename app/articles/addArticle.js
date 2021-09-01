@@ -1,7 +1,5 @@
 const fs = require("fs");
 const addArticle = (req, res) => {
-  console.log(req.body["name"]);
-  console.log(req.body.name);
   if (
     !req.body.name &&
     !req.body.category &&
@@ -28,7 +26,6 @@ const addArticle = (req, res) => {
       month: req.body.month,
     },
   };
-  console.log(jsonData);
   fs.writeFile(
     `./articles/${req.body.name}/data.json`,
     JSON.stringify(jsonData)

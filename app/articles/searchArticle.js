@@ -1,6 +1,5 @@
 const fs = require("fs");
 const searchArticle = (req, res) => {
-  console.log(req.query);
   const article = { articles: [] };
   const dirFileList = fs.readdirSync("./articles");
   dirFileList.map(function (value, index) {

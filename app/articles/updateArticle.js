@@ -1,8 +1,5 @@
 const fs = require("fs");
 const updateArticle = (req, res) => {
-  console.log(req.body["name"]);
-  console.log(req.body.name);
-
   const article = JSON.parse(
     fs.readFileSync(`./articles/${req.body.name}/data.json`)
   );
