@@ -1,21 +1,18 @@
-const showArticles = require("./app/articles/showArticles");
-const showArticle = require("./app/articles/showArticle");
-const showByCategories = require("./app/categories/showByCategories");
-const showCategories = require("./app/categories/showCategories");
-const showByTag = require("./app/tags/showByTag");
-const showTags = require("./app/tags/showTags");
-const showByYear = require("./app/dates/showByYear");
-const showYears = require("./app/dates/showYears");
-const showByMonth = require("./app/dates/showByMonth");
-const showMonths = require("./app/dates/showMonths");
-const addArticle = require("./app/articles/addArticle");
-const updateArticle = require("./app/articles/updateArticle");
-const deleteArticle = require("./app/articles/deleteArticle");
-const addCategory = require("./app/categories/addCategory");
+const checkApp = require("./app/checkApp");
+if (!checkApp()) {
+  return;
+}
+const articles = require("./app/articles/index");
+const categories = require("./app/categories/index");
+const dates = require("./app/dates/index");
+const tags = require("./app/tags/index");
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+
 app.use(bodyParser.json({ extended: true }));
+
 app.use(function (req, res, next) {
   console.log(`${req.method} request for route : ${req.url}`);
 
@@ -26,21 +23,30 @@ app.get("/api/server-running", function (req, res) {
   res.json({ status: "ok" });
 });
 
-app.get("/api/articles", showArticles);
-app.get("/api/article/:article", showArticle);
-app.get("/api/categories/:category", showByCategories);
-app.get("/api/categories", showCategories);
-app.get("/api/tags", showTags);
-app.get("/api/tags/:tag", showByTag);
-app.get("/api/years/:year", showByYear);
-app.get("/api/years", showYears);
-app.get("/api/years/:year/:month", showByMonth);
-app.get("/api/months", showMonths);
-app.post("/api/admin/addArticle", addArticle);
-app.post("/api/admin/addCategory", addCategory);
-app.put("/api/admin/updateArticle", updateArticle);
-app.delete("/api/admin/deleteArticle", deleteArticle);
+// Artciel routs
+app.get("/api/articles", articles.showArticles);
+app.get("/api/article/:article", articles.showArticle);
+app.post("/api/articles", articles.addArticle);
+app.put("/api/articles", articles.updateArticle);
+app.patch("/api/articles", articles.updateArticle);
+app.delete("/api/articles", articles.deleteArticle);
+
+// Category routs
+app.get("/api/categories/:category", categories.showByCategories);
+app.get("/api/categories", categories.showCategories);
+app.post("/api/categories", categories.addCategory);
+
+// Tag routs
+app.get("/api/tags", tags.showTags);
+app.get("/api/tags/:tag", tags.showByTag);
+
+// Date routs
+app.get("/api/years/:year", dates.showByYear);
+app.get("/api/years", dates.showYears);
+app.get("/api/years/:year/:month", dates.showByMonth);
+app.get("/api/months", dates.showMonths);
 
 app.listen(2000);
+console.log("\n\nListining on : http://localhost:2000\n\n");
 
 module.exports = app;
