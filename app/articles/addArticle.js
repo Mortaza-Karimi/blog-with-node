@@ -12,11 +12,23 @@ const addArticle = (req, res) => {
 
     return;
   }
-  fs.mkdir(`./articles/${req.body.name}`);
-  fs.writeFileSync(
-    `./articles/${req.body.name}/${req.body.name}.md`,
-    req.body.content
-  );
+  try {
+    fs.mkdir(`./articles/${req.body.name}`);
+  } catch (e) {
+    res.writeHead(500, { "Content-Type": "text/html" });
+    res.end("Error 500 : Internal Server Error");
+    return;
+  }
+  try {
+    fs.writeFileSync(
+      `./articles/${req.body.name}/${req.body.name}.md`,
+      req.body.content
+    );
+  } catch (e) {
+    res.writeHead(500, { "Content-Type": "text/html" });
+    res.end("Error 500 : Internal Server Error");
+    return;
+  }
   const jsonData = {
     name: req.body.name,
     category: req.body.category,
@@ -26,10 +38,16 @@ const addArticle = (req, res) => {
       month: req.body.month,
     },
   };
-  fs.writeFile(
-    `./articles/${req.body.name}/data.json`,
-    JSON.stringify(jsonData)
-  );
+  try {
+    fs.writeFile(
+      `./articles/${req.body.name}/data.json`,
+      JSON.stringify(jsonData)
+    );
+  } catch (e) {
+    res.writeHead(500, { "Content-Type": "text/html" });
+    res.end("Error 500 : Internal Server Error");
+    return;
+  }
 
   res.json({ status: "ok" });
 };

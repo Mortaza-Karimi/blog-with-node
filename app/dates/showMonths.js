@@ -2,10 +2,25 @@ const fs = require("fs");
 const showMonths = (req, res) => {
   const months = { months: [] };
 
-  const dirFileList = fs.readdirSync("articles");
+  try {
+    const dirFileList = fs.readdirSync("articles");
+  } catch (e) {
+    res.writeHead(404, { "Content-Type": "text/html" });
+    res.end("Error 404 : not found");
+    return;
+  }
 
   dirFileList.map(function (value, index) {
-    const thisArticle = fs.readFileSync(`articles/${value}/data.json`, "utf-8");
+    try {
+      const thisArticle = fs.readFileSync(
+        `articles/${value}/data.json`,
+        "utf-8"
+      );
+    } catch (e) {
+      res.writeHead(404, { "Content-Type": "text/html" });
+      res.end("Error 404 : not found");
+      return;
+    }
 
     months.months.push(
       JSON.parse(thisArticle)["date"]["year"] +
