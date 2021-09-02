@@ -1,11 +1,11 @@
-const axios = require("axios").default;
-const addCategory = (req, res) => {
+const axios = require("../../../lib/axios");
+const addCategory = (category) => {
   axios
-    .post("http://localhost:2000/api/categories", {
-      category: !req.body.category ? "" : req.body.category,
+    .post("/api/categories", {
+      category: category,
     })
     .then((value) => {
-      res.json({ response: value.data });
+      return { response: value.data };
     });
 };
 module.exports = addCategory;

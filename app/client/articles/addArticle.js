@@ -1,14 +1,10 @@
-const axios = require("axios").default;
+const axios = require("../../../lib/axios");
 
-function addArticle(req, res) {
-  const name = req.body.name;
-  const category = req.body.category;
-  const tags = req.body.tags;
-  const content = req.body.content;
+function addArticle(name, category, tags, content) {
   const currentTime = new Date();
 
   axios
-    .post("http://localhost:2000/api/articles", {
+    .post("/api/articles", {
       name: name,
       category: category,
       tags: tags,
@@ -17,7 +13,7 @@ function addArticle(req, res) {
       content: content,
     })
     .then((value) => {
-      res.json({ response: value.data });
+      return { response: value.data };
     });
 }
 

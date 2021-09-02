@@ -1,11 +1,7 @@
 const fs = require("fs");
-const showByMonth = (req, res) => {
-  axios
-    .get(
-      `http://localhost:2000/api/years/${req.params.year}/${req.params.month}`
-    )
-    .then((value) => {
-      res.json({ response: value.data });
-    });
+const showByMonth = (year, month) => {
+  axios.get(`/api/years/${year}/${month}`).then((value) => {
+    return { response: value.data };
+  });
 };
 module.exports = showByMonth;

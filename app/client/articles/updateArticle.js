@@ -1,21 +1,17 @@
-const axios = require("axios").default;
-const updateArticle = (req, res) => {
-  const name = req.body.name;
-  const category = req.body.category;
-  const tags = req.body.tags;
-  const content = req.body.content;
+const axios = require("../../../lib/axios");
+const updateArticle = (name = "", category = "", tags = "", content = "") => {
   const currentTime = new Date();
   axios
-    .put("http://localhost:2000/api/articles", {
-      name: !name ? "" : name,
-      category: !category ? "" : category,
-      tags: !tags ? "" : tags,
+    .put("/api/articles", {
+      name: name,
+      category: category,
+      tags: tags,
       year: currentTime.getFullYear(),
       month: currentTime.getMonth(),
-      content: !content ? "" : content,
+      content: content,
     })
     .then((value) => {
-      res.json({ response: value.data });
+      return { response: value.data };
     });
 };
 module.exports = updateArticle;

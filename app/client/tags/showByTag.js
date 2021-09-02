@@ -1,9 +1,7 @@
-const axios = require("axios").default;
-const showByTag = (req, res) => {
-  axios
-    .get(`http://localhost:2000/api/tags/${req.params.tag}`)
-    .then((value) => {
-      res.json({ response: value.data });
-    });
+const axios = require("../../../lib/axios");
+const showByTag = (tag) => {
+  axios.get(`/api/tags/${tag}`).then((value) => {
+    return { response: value.data };
+  });
 };
 module.exports = showByTag;

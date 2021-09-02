@@ -1,12 +1,12 @@
-const axios = require("axios").default;
+const axios = require("../../../lib/axios");
 const searchArticle = require("./searchArticle");
-const showArticles = (req, res) => {
-  if (req.query.q) {
-    searchArticle(req, res);
+const showArticles = (q) => {
+  if (q) {
+    searchArticle(q);
     return;
   }
-  axios.get("http://localhost:2000/api/articles").then((value) => {
-    res.json({ response: value.data });
+  axios.get("/api/articles").then((value) => {
+    return { response: value.data };
   });
 };
 module.exports = showArticles;
