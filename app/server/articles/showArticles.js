@@ -16,12 +16,12 @@ const showArticles = (req, res) => {
           `articles/${value}/data.json`,
           "utf-8"
         );
+        articles.articles.push(JSON.parse(thisArticle));
       } catch (e) {
         res.writeHead(404, { "Content-Type": "text/html" });
         res.end("Error 404 : not found");
         return;
       }
-      articles.articles.push(JSON.parse(thisArticle));
     });
   } catch (e) {
     res.writeHead(404, { "Content-Type": "text/html" });
