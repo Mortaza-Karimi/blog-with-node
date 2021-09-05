@@ -1,11 +1,11 @@
-const checkApp = require("./app/server/checkApp");
+const checkApp = require("./app/checkApp");
 if (!checkApp()) {
   return;
 }
-const articles = require("./app/server/articles/index");
-const categories = require("./app/server/categories/index");
-const dates = require("./app/server/dates/index");
-const tags = require("./app/server/tags/index");
+const articles = require("./app/articles/index");
+const categories = require("./app/categories/index");
+const dates = require("./app/dates/index");
+const tags = require("./app/tags/index");
 
 const express = require("express");
 const bodyParser = require("body-parser");
