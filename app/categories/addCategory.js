@@ -8,7 +8,7 @@ const addCategory = (req, res) => {
 
   try {
     var categories = JSON.parse(
-      fs.readFileSync(`./app/server/categories/categories.json`, "utf-8")
+      fs.readFileSync(`./app/categories/categories.json`, "utf-8")
     );
   } catch (e) {
     res.writeHead(404, { "Content-Type": "text/html" });
@@ -19,7 +19,7 @@ const addCategory = (req, res) => {
   categories.categories.push(req.body.category);
   try {
     fs.writeFileSync(
-      `./app/server/categories/categories.json`,
+      `./app/categories/categories.json`,
       JSON.stringify(categories)
     );
   } catch (e) {

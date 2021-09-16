@@ -9,7 +9,17 @@ const showArticle = (req, res) => {
           `./articles/${dirFileList[index]}/data.json`,
           "utf-8"
         );
-        if (value.replace(" ", "-") === req.params.article) {
+
+        if (
+          decodeURI(value).trim().replace(" ", "-") ===
+          req.params.article.trim().replace(" ", "-")
+        ) {
+          article.article = JSON.parse(thisArticle);
+        }
+        if (
+          decodeURI(value).trim().replace("%20", "-") ===
+          req.params.article.trim().replace("%20", "-")
+        ) {
           article.article = JSON.parse(thisArticle);
         }
       } catch (e) {
@@ -17,12 +27,12 @@ const showArticle = (req, res) => {
         res.end("Error 404 : not found");
         return;
       }
-      res.json(article);
     });
   } catch (e) {
     res.writeHead(404, { "Content-Type": "text/html" });
     res.end("Error 404 : not found");
     return;
   }
+  res.json(article);
 };
 module.exports = showArticle;

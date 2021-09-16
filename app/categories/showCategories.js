@@ -2,7 +2,7 @@ const fs = require("fs");
 const showCategories = (req, res) => {
   try {
     const categories = JSON.parse(
-      fs.readFileSync("./app/server/categories/categories.json", "utf-8")
+      fs.readFileSync("./app/categories/categories.json", "utf-8")
     );
     res.json(categories);
   } catch (e) {
