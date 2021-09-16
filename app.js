@@ -10,11 +10,16 @@ const tags = require("./app/tags/index");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
+
+app.use(express.static("./views"));
 
 app.use(bodyParser.json({ extended: true }));
 
 app.use(function (req, res, next) {
-  console.log(`${req.method} request for route : ${req.url}`);
+  console.log(`${req.method} request for route : ${decodeURI(req.url)}`);
 
   next();
 });
