@@ -17,16 +17,18 @@ const updateArticle = (req, res) => {
       rimraf(`./articles/${req.body.OLDname}`, (e) => {
         console.log(e);
       });
-      fs.mkdirSync(`./articles/${req.body.name}`);
+      setTimeout(() => {
+        fs.mkdirSync(`./articles/${req.body.name}`);
 
-      fs.writeFileSync(
-        `./articles/${req.body.name}/data.json`,
-        JSON.stringify(jsonData)
-      );
-      fs.writeFileSync(
-        `./articles/${req.body.name}/${req.body.name}.md`,
-        req.body.content
-      );
+        fs.writeFileSync(
+          `./articles/${req.body.name}/data.json`,
+          JSON.stringify(jsonData)
+        );
+        fs.writeFileSync(
+          `./articles/${req.body.name}/${req.body.name}.md`,
+          req.body.content
+        );
+      }, 300);
     } catch (e) {
       res.writeHead(500, { "Content-Type": "text/html" });
       res.end("Error 500 : Internal Server Error");
