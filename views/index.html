@@ -1,341 +1,594 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-  <title>
-    مدیریت وبلاگ
-  </title>
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-  <!-- bootstrap rtl -->
-  <link rel="stylesheet" href="dist/css/bootstrap-rtl.min.css">
-  <!-- template rtl version -->
-  <link rel="stylesheet" href="dist/css/custom-style.css">
-
-</head>
-
-<body class="hold-transition sidebar-mini">
-  <div class="wrapper">
-
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
-      <!-- Left navbar links -->
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">خانه</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">تماس</a>
-        </li>
-      </ul>
-
-      <!-- SEARCH FORM -->
-      <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-          <input class="form-control form-control-navbar" type="search" placeholder="جستجو" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-navbar" type="submit">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-
-      <!-- Right navbar links -->
-      <ul class="navbar-nav mr-auto">
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fa fa-comments-o"></i>
-            <span class="badge badge-danger navbar-badge">3</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-left">
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 ml-3 img-circle">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    حسام موسوی
-                    <span class="float-left text-sm text-danger"><i class="fa fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">با من تماس بگیر لطفا...</p>
-                  <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 ساعت قبل</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <!-- Message Start -->
-              <div class="media">
-                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle ml-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    پیمان احمدی
-                    <span class="float-left text-sm text-muted"><i class="fa fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">من پیامتو دریافت کردم</p>
-                  <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 ساعت قبل</p>
-                </div>
-              </div>
-              <!-- Message End -->
-            </a>
-
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">مشاهده همه پیام‌ها</a>
-          </div>
-        </li>
-        <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="fa fa-bell-o"></i>
-            <span class="badge badge-warning navbar-badge">15</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-left">
-            <span class="dropdown-item dropdown-header">15 نوتیفیکیشن</span>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fa fa-envelope ml-2"></i> 4 پیام جدید
-              <span class="float-left text-muted text-sm">3 دقیقه</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fa fa-users ml-2"></i> 8 درخواست دوستی
-              <span class="float-left text-muted text-sm">12 ساعت</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fa fa-file ml-2"></i> 3 گزارش جدید
-              <span class="float-left text-muted text-sm">2 روز</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">مشاهده همه نوتیفیکیشن</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
-              class="fa fa-th-large"></i></a>
-        </li>
-      </ul>
-    </nav>
-    <!-- /.navbar -->
-
-
-
-
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-          style="opacity: .8">
-        <span class="brand-text font-weight-light">پنل مدیریت</span>
-      </a>
-
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <div>
-          <!-- Sidebar user panel (optional) -->
-          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-              <img src="dist/img/javad.jpeg" class="img-circle elevation-2" alt="User Image">
+<html lang="fa" dir="rtl">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/bootstrap-icons.css">
+      <link rel="stylesheet" href="css/owl.carousel.css">
+      <link rel="stylesheet" href="css/owl.theme.default.css">
+      <link rel="stylesheet" href="style.css">
+      <title>قالب وبلاگ سئو 90</title>
+   </head>
+   <body>
+      <header>
+         <div class="index-top position-relative w-100 bg-white">
+            <div class="main-menu">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-2 col-3">
+                        <img src="img/logo.png" alt="" height="30px" style="object-fit: contain;margin-top:18px;filter: grayscale(1);">
+                     </div>
+                     <div class="col-md-7 col-5 pt-2">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                              aria-expanded="false" aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                           </button>
+                           <div class="collapse navbar-collapse"
+                              id="navbarSupportedContent">
+                              <ul class="navbar-nav mb-2 mb-lg-0">
+                                 <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">خانه</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#">مقالات</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#" tabindex="-1"
+                                       aria-disabled="true">تماس با ما</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#" tabindex="-1"
+                                       aria-disabled="true">درباره</a>
+                                 </li>
+                                 <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    دسته بندی ها
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                       <li><a class="dropdown-item" href="#">مجله فرهنگی</a></li>
+                                       <li><a class="dropdown-item" href="#">مطالب ویدئویی</a></li>
+                                       <li>
+                                          <hr class="dropdown-divider">
+                                       </li>
+                                       <li><a class="dropdown-item" href="#">ارسالی مخاطبین</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                        </nav>
+                     </div>
+                     <div class="col-md-3 col-4 text-start">
+                        <div class="top-account">
+                           <a href="#" class="text-dark"><i class="bi bi-person"></i></a>
+                           <a href="#" class="text-dark"><i class="bi bi-gem"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="info">
-              <a href="#" class="d-block">
-                geeksesi
-              </a>
+         </div>
+      </header>
+      <section class="my-5">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="slider-index shadow-sm">
+                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                           <div class="carousel-item active">
+                              <img src="img/slider/Woo_Package_New_Bnr1.png" class="d-block w-100 rounded" alt="">
+                           </div>
+                           <div class="carousel-item">
+                              <img src="img/slider/Woo_Package_New_Bnr2.png" class="d-block w-100 rounded" alt="">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-4">
+                        <div class="b-slider-btn">
+                           <a href="#" class="bg-primary rounded d-block p-3 shadow-sm text-center my-1 my-md-3 text-light"><i class="bi bi-filter-left"></i> کتاب و رمان</a>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="b-slider-btn">
+                           <a href="#" class="bg-primary rounded d-block p-3 shadow-sm text-center my-1 my-md-3  text-light"><i class="bi bi-person"></i> پیوستن به انجمن</a>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="b-slider-btn">
+                           <a href="#" class="bg-warning rounded d-block p-3 shadow-sm text-center my-1 my-md-3  text-dark"><i class="bi bi-gem"></i> خرید عضویت ویژه</a>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <div class="search-box">
+                           <form action="" class="position-relative w-100 mb-3 mb-md-0">
+                              <input type="text" placeholder="جستجو کنید ..." class="pe-3">
+                              <button class="position-absolute bg-dark"><i class="bi bi-search"></i></button>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 top-slider">
+                  <div class="slider-item bg-white rounded p-4">
+                     <figure class="position-relative">
+                        <img src="img/blog/youtube.jpg" alt="" class="w-100 rounded">
+                        <figcaption class="tp_top position-absolute p-4">
+                           <span>20 مرداد</span>
+                        </figcaption>
+                        <figcaption class="tp_bottom position-absolute p-4">
+                           <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                        </figcaption>
+                     </figure>
+                     <div class="item-cat">
+                        <div class="d-flex">
+                           <i class="bi bi-play-circle"></i>
+                           <span class="d-block p-2 text-info">بروز شده</span>
+                        </div>
+                     </div>
+                     <a href="#">
+                        <h6 class="overflow-hidden px-2">تاثیر ویدئو در سئو</h6>
+                     </a>
+                     <a href="#" class="d-block bg-dark p-3 mt-3 text-center text-light rounded">مطالب ویژه اعضای Vip</a>
+                  </div>
+               </div>
             </div>
-          </div>
-
-          <!-- Sidebar Menu -->
-          <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <!-- Add icons to the links using the .nav-icon class
-             with font-awesome or any other icon font library -->
-              <li class="nav-item">
-                <a href="index.html" class="nav-link active">
-                  <i class="nav-icon fa fa-dashboard"></i>
-                  <p>پیشخوان</p>
-                </a>
-              </li>
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fa fa-file"></i>
-                  <p>
-                    نوشته ها
-                    <i class="right fa fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="articles.html" class="nav-link">
-                      <i class="fa fa-copy nav-icon"></i>
-                      <p>همه نوشته‌ها</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="addArticle.html" class="nav-link">
-                      <i class="fa fa-plus-square nav-icon"></i>
-                      <p>اضافه کردن نوشته</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="categories.html" class="nav-link">
-                  <i class="nav-icon fa fa-list-alt"></i>
-                  <p>دسته‌بندی‌ها</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="tags.html" class="nav-link">
-                  <i class="nav-icon fa fa-tag"></i>
-                  <p>برچسب ها</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dates.html" class="nav-link">
-                  <i class="nav-icon fa fa-clock-o"></i>
-                  <p>آرشیو زمانی</p>
-                </a>
-              </li>
-
-            </ul>
-          </nav>
-          <!-- /.sidebar-menu -->
-        </div>
-      </div>
-      <!-- /.sidebar -->
-    </aside>
-
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0 text-dark">پیشخوان</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-left">
-                <li class="breadcrumb-item"><a href="#">خانه</a></li>
-                <li class="breadcrumb-item active">پیشخوان</li>
-              </ol>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content-header -->
-
-      <!-- Main content -->
-      <section class="content">
-        <div class="container-fluid">
-          <!-- Info boxes -->
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-6">
-              <div class="info-box">
-                <span class="info-box-icon bg-info elevation-1"><i class="fa fa-file"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">تعداد مطالب</span>
-                  <span class="info-box-number" id="articles-length">
-                    10
-                  </span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-6">
-              <div class="info-box mb-3">
-                <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-list-alt"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">تعداد دسته‌بندی‌ها</span>
-                  <span class="info-box-number" id="categories-length">8</span>
-                </div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-
-            <!-- fix for small devices only -->
-            <div class="clearfix hidden-md-up"></div>
-
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-
-
-        </div>
-        <!--/. container-fluid -->
+         </div>
       </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer">
-      <!-- To the right -->
-      <div class="float-right d-sm-none d-md-block">
-        Anything you want
+      <section class="my-3">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <div class="title-box mb-3">
+                     <p class="m-0 p-0">مطالب بروز شده</p>
+                     <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
+                  </div>
+               </div>
+               <div class="col-12">
+                  <div class="top-slider owl-carousel owl-theme top-slider-wrap">
+                     <div class="slider-item bg-white rounded p-4">
+                        <figure class="position-relative">
+                           <img src="img/blog/youtube.jpg" alt="" class="w-100 rounded">
+                           <figcaption class="tp_top position-absolute p-4">
+                              <span>20 مرداد</span>
+                           </figcaption>
+                           <figcaption class="tp_bottom position-absolute p-4">
+                              <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                           </figcaption>
+                        </figure>
+                        <div class="item-cat">
+                           <div class="d-flex">
+                              <i class="bi bi-play-circle"></i>
+                              <span class="d-block p-2 text-info">بروز شده</span>
+                           </div>
+                        </div>
+                        <a href="#">
+                           <h6 class="overflow-hidden px-2">تاثیر ویدئو در سئو</h6>
+                        </a>
+                     </div>
+                     <div class="slider-item bg-white rounded p-4">
+                        <figure class="position-relative">
+                           <img src="img/blog/ecom.jpg" alt="" class="w-100 rounded">
+                           <figcaption class="tp_top position-absolute p-4">
+                              <span>20 مرداد</span>
+                           </figcaption>
+                           <figcaption class="tp_bottom position-absolute p-4">
+                              <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                           </figcaption>
+                        </figure>
+                        <div class="item-cat">
+                           <div class="d-flex">
+                              <i class="bi bi-play-circle"></i>
+                              <span class="d-block p-2 text-info">بروز شده</span>
+                           </div>
+                        </div>
+                        <a href="#">
+                           <h6 class="overflow-hidden px-2">آموزش نصب قالب woo وردپرس</h6>
+                        </a>
+                     </div>
+                     <div class="slider-item bg-white rounded p-4">
+                        <figure class="position-relative">
+                           <img src="img/blog/podcast.jpg" alt="" class="w-100 rounded">
+                           <figcaption class="tp_top position-absolute p-4">
+                              <span>20 مرداد</span>
+                           </figcaption>
+                           <figcaption class="tp_bottom position-absolute p-4">
+                              <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                           </figcaption>
+                        </figure>
+                        <div class="item-cat">
+                           <div class="d-flex">
+                              <i class="bi bi-play-circle"></i>
+                              <span class="d-block p-2 text-info">بروز شده</span>
+                           </div>
+                        </div>
+                        <a href="#">
+                           <h6 class="overflow-hidden px-2">رادیو آموزشی هرروز با شما</h6>
+                        </a>
+                     </div>
+                     <div class="slider-item bg-white rounded p-4">
+                        <figure class="position-relative">
+                           <img src="img/blog/btstrap.jpg" alt="" class="w-100 rounded">
+                           <figcaption class="tp_top position-absolute p-4">
+                              <span>20 مرداد</span>
+                           </figcaption>
+                           <figcaption class="tp_bottom position-absolute p-4">
+                              <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                           </figcaption>
+                        </figure>
+                        <div class="item-cat">
+                           <div class="d-flex">
+                              <i class="bi bi-play-circle"></i>
+                              <span class="d-block p-2 text-info">بروز شده</span>
+                           </div>
+                        </div>
+                        <a href="#">
+                           <h6 class="overflow-hidden px-2">دانلود و شروع کار با بوت استرپ</h6>
+                        </a>
+                     </div>
+                     <div class="slider-item bg-white rounded p-4">
+                        <figure class="position-relative">
+                           <img src="img/blog/buisiness.jpg" alt="" class="w-100 rounded">
+                           <figcaption class="tp_top position-absolute p-4">
+                              <span>20 مرداد</span>
+                           </figcaption>
+                           <figcaption class="tp_bottom position-absolute p-4">
+                              <i class="bi bi-play bg-white d-inline-block text-center"></i>
+                           </figcaption>
+                        </figure>
+                        <div class="item-cat">
+                           <div class="d-flex">
+                              <i class="bi bi-play-circle"></i>
+                              <span class="d-block p-2 text-info">بروز شده</span>
+                           </div>
+                        </div>
+                        <a href="#">
+                           <h6 class="overflow-hidden px-2">اکانت های معتبر اینستاگرام</h6>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section>
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-12">
+                  <div class="title-box mb-3">
+                     <p class="m-0 p-0">آخرین مطالب سایت</p>
+                     <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/CSS-Contact-Us-Form.png" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-info py-1 px-2">مطالب روز</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">قالب های رایگان Html</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-instagram d-inline-block text-info text-center"></i>
+                        <span>مقاله اینستاگرام</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/podcast.jpg" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-danger py-1 px-2">رادیو</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">رادیو آموزشی افتتاح شد</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-headphones d-inline-block text-info text-center"></i>
+                        <span>پادکست</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/buisiness.jpg" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-dark py-1 px-2">پرسش و پاسخ</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">بازاریابی محتوا و هدف</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-card-text d-inline-block text-info text-center"></i>
+                        <span>پیشنهادی</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/cook.jpg" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-danger py-1 px-2">تغذیه</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">تنظیم برنامه غذا برای منزل</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-clock d-inline-block text-info text-center"></i>
+                        <span>خانه و کاشانه</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/Piks.jpg" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-primary py-1 px-2">هنر</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">عجیب ترین تابلو ها</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-columns-gap d-inline-block text-info text-center"></i>
+                        <span>مقاله تصویری</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/shop.jpg" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-info py-1 px-2">فروشگاه اینترنتی</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">چگونه 10 برابر فروختیم ؟</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-bag d-inline-block text-info text-center"></i>
+                        <span>کسب و کار</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="my-5 ">
+         <div class="container bg-white py-3 rounded grided-box px-4 pt-4">
+            <div class="row">
+               <div class="col-12">
+                  <div class="title-box mb-3">
+                     <p class="m-0 p-0">آخرین مطالب سایت</p>
+                     <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-6 top-slider">
+                        <a href="#">
+                           <div class="slider-item index-item-p">
+                              <figure class="position-relative">
+                                 <img src="img/blog/CSS-Contact-Us-Form.png" alt="" class="w-100">
+                                 <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                 </figcaption>
+                                 <figcaption class="tp_bottom w-100 position-absolute p-4">
+                                    <h4 class="overflow-hidden px-2 text-light w-100 p-0 m-0">روانشناسی رنگ</h4>
+                        </a>
+                        </figcaption>
+                        </figure>
+                        </div></a>
+                     </div>
+                     <div class="col-md-6 top-slider">
+                        <a href="#">
+                           <div class="slider-item index-item-p">
+                              <figure class="position-relative">
+                                 <img src="img/blog/shop.jpg" alt="" class="w-100">
+                                 <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                 </figcaption>
+                                 <figcaption class="tp_bottom w-100 position-absolute p-4">
+                                    <h4 class="overflow-hidden px-2 text-light w-100 p-0 m-0">درآمد فروشگاه اینترنتی</h4>
+                        </a>
+                        </figcaption>
+                        </figure>
+                        </div></a>
+                     </div>
+                     <div class="col-md-6 top-slider">
+                        <a href="#">
+                           <div class="slider-item index-item-p">
+                              <figure class="position-relative">
+                                 <img src="img/blog/btstrap.jpg" alt="" class="w-100">
+                                 <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                 </figcaption>
+                                 <figcaption class="tp_bottom w-100 position-absolute p-4">
+                                    <h4 class="overflow-hidden px-2 text-light w-100 p-0 m-0">تغییرات بوت استرپ</h4>
+                        </a>
+                        </figcaption>
+                        </figure>
+                        </div></a>
+                     </div>
+                     <div class="col-md-6 top-slider">
+                        <a href="#">
+                           <div class="slider-item index-item-p">
+                              <figure class="position-relative">
+                                 <img src="img/blog/buisiness.jpg" alt="" class="w-100">
+                                 <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                 </figcaption>
+                                 <figcaption class="tp_bottom w-100 position-absolute p-4">
+                                    <h4 class="overflow-hidden px-2 text-light w-100 p-0 m-0">ساخت بنرهای زیبا برای پست های اینستا</h4>
+                        </a>
+                        </figcaption>
+                        </figure>
+                        </div></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-12 top-slider">
+                        <a href="#">
+                           <div class="slider-item index-item-p">
+                              <figure class="position-relative">
+                                 <img src="img/blog/youtube.jpg" alt="" class="w-100">
+                                 <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                 </figcaption>
+                                 <figcaption class="tp_bottom w-100 position-absolute p-4">
+                                    <h4 class="overflow-hidden px-2 text-light w-100 p-0 m-0">تاثیر ویدئو در سئو</h4>
+                        </a>
+                        </figcaption>
+                        </figure>
+                        </div></a>
+                     </div>
+                     <div class="col-12 top-slider">
+                        <a href="#">
+                           <div class="slider-item index-item-p">
+                              <figure class="position-relative">
+                                 <img src="img/blog/cook.jpg" alt="" class="w-100">
+                                 <figcaption class="tp_top position-absolute p-4">
+                                    <span>20 مرداد</span>
+                                 </figcaption>
+                                 <figcaption class="tp_bottom w-100 position-absolute p-4">
+                                    <h4 class="overflow-hidden px-2 text-light w-100 p-0 m-0">غذاهای رژیمی خاص</h4>
+                        </a>
+                        </figcaption>
+                        </figure>
+                        </div></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="mb-5">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-12">
+                  <div class="title-box mb-3">
+                     <p class="m-0 p-0">آخرین مطالب سایت</p>
+                     <span class="d-block"><a href="#">مشاهده همه</a> <i class="bi bi-arrow-left position-relative"></i></span>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/CSS-Contact-Us-Form.png" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-info py-1 px-2">مطالب روز</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">قالب های رایگان Html</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-instagram d-inline-block text-info text-center"></i>
+                        <span>مقاله اینستاگرام</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/buisiness.jpg" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-dark py-1 px-2">پرسش و پاسخ</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">بازاریابی محتوا و هدف</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-card-text d-inline-block text-info text-center"></i>
+                        <span>پیشنهادی</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+               <div class="col-sm-6 col-md-6 col-lg-4 my-3">
+                  <div class="blg-wrap bg-white pb-3">
+                     <figure class="position-relative">
+                     <img src="img/blog/Piks.jpg" alt="" class="w-100">
+                     <figcaption class="position-absolute w-100 h-100"><span class="blg-dt">4 مرداد</span></figcaption>
+                     </figure class="position-relative">
+                     <div class="px-3 py-1 text-start">
+                        <span class="blg-cat-name d-inline-block bg-primary py-1 px-2">هنر</span>
+                     </div>
+                     <a href="#">
+                        <h4 class="blg-title p-3 mx-5 text-dark border-bottom overflow-hidden">عجیب ترین تابلو ها</h4>
+                     </a>
+                     <div class="post-type d-flex p-3 pb-0">
+                        <i class="bi bi-columns-gap d-inline-block text-info text-center"></i>
+                        <span>مقاله تصویری</span>
+                     </div>
+                     <p class="p-4 overflow-hidden">زمانی که چندین سال قبل تصمیم گرفتیم تا قدم در میدان طراحی و برنامه نویسی وب سایت بگذاریم هیچ مسیری برای ما واضح و روشن نبود و باید در جستجوی راه های درست ، روز ها و هفته ها وقت سپری می کردیم </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer class="bg-white py-4 text-center">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <ul class="d-flex justify-content-center social-bx">
+                     <li class="p-2 m-1"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                     <li class="p-2 m-1"><a href="#"><i class="bi bi-twitter"></i></a></li>
+                     <li class="p-2 m-1"><a href="#"><i class="bi bi-facebook"></i></a></li>
+                  </ul>
+               </div>
+               <div class="col-12">
+                  <p>قالب وبلاگی سئو 90 رایگان</p>
+                  <p class="mb-0">&copy; حقوق انتشار برای مجموعه محفوظ است</p>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <div class="scroll_top">
+         <span class="btn btn-info text-center text-light">
+         <i class="bi bi-arrow-up"></i>
+         </span>
       </div>
-      <!-- Default to the left -->
-      <strong>CopyLeft &copy; 2018 <a href="http://github.com/hesammousavi/">حسام موسوی</a>.</strong>
-    </footer>
-  </div>
-  <!-- ./wrapper -->
-
-  <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
-
-  <script src="../dist/app.js" defer></script>
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="dist/js/adminlte.js"></script>
-
-  <!-- OPTIONAL SCRIPTS -->
-  <script src="dist/js/demo.js"></script>
-
-  <!-- PAGE PLUGINS -->
-  <!-- SparkLine -->
-  <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-  <!-- jVectorMap -->
-  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <!-- SlimScroll 1.3.0 -->
-  <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-  <!-- ChartJS 1.0.2 -->
-  <script src="plugins/chartjs-old/Chart.min.js"></script>
-
-  <!-- PAGE SCRIPTS -->
-  <script src="dist/js/pages/dashboard2.js"></script>
-</body>
-
+      <script src="js/jQuery.js"></script>
+      <script src="js/popper.js"></script>
+      <script src="js/bootstrap.js"></script>
+      <script src="js/owl.carousel.js"></script>
+      <script src="js/index.js"></script>
+      <script src="https://seo90.ir/downloads/category/html-theme/"></script>
+   </body>
 </html>
