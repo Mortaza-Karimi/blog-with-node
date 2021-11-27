@@ -27,6 +27,7 @@ const showMonths = (req, res) => {
     return;
   }
 
+  months.months = [...new Set(months.months)];
   res.json(months);
 };
 module.exports = showMonths;

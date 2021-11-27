@@ -10,8 +10,18 @@ const showByMonth = (req, res) => {
           `articles/${value}/data.json`,
           "utf-8"
         );
-        if (JSON.parse(thisArticle)["date"]["year"] === req.params.year) {
-          if (JSON.parse(thisArticle)["date"]["month"] === req.params.month) {
+        console.log(JSON.parse(thisArticle)["date"]["year"].toString());
+        console.log(req.params.year);
+
+        console.log(JSON.parse(thisArticle)["date"]["month"].toString());
+        console.log(req.params.month);
+        if (
+          JSON.parse(thisArticle)["date"]["year"].toString() === req.params.year
+        ) {
+          if (
+            JSON.parse(thisArticle)["date"]["month"].toString() ===
+            req.params.month
+          ) {
             months.months.push(JSON.parse(thisArticle));
           }
         }

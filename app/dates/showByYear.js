@@ -10,7 +10,10 @@ const showByYear = (req, res) => {
           `articles/${value}/data.json`,
           "utf-8"
         );
-        if (JSON.parse(thisArticle)["date"]["year"] === req.params.year) {
+
+        if (
+          JSON.parse(thisArticle)["date"]["year"].toString() === req.params.year
+        ) {
           years.years.push(JSON.parse(thisArticle));
         }
       } catch (e) {
